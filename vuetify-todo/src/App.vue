@@ -3,7 +3,8 @@
   <v-app class="grey lighten-4">
     <Navbar />
   
-    <v-content>
+    <!-- Here is where our other comtent is being loaded in -->
+    <v-content class="mx-4 mb-4">
       <router-view></router-view>
     </v-content>
 
