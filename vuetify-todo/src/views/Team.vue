@@ -3,9 +3,31 @@
     <h1 class="subheading grey--text">Team</h1>
 
     <v-container class="my-5">
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, inventore? Quae mollitia impedit nulla quis iusto labore velit tenetur nobis. Pariatur, earum deleniti repellendus iure necessitatibus obcaecati ducimus ipsam expedita.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, cum dolor officia doloremque iste voluptate expedita quaerat delectus rerum, repellendus, quisquam officiis impedit et necessitatibus ad velit totam. Nulla, quis!</p>
+      <!-- v-layout is the row of the content -->
+      <v-layout row wrap>
+        <!-- v-flex is the column of v-layout -->
+        <v-flex xs12 md6>
+          <v-btn outline block class="primary">1</v-btn>
+        </v-flex>
+        <v-flex xs4 md2>
+          <v-btn outline block class="primary">2</v-btn>
+        </v-flex>
+        <v-flex xs4 md2>
+          <v-btn outline block class="primary">2</v-btn>
+        </v-flex>
+        <v-flex xs4 md2>
+          <v-btn outline block class="primary">2</v-btn>
+        </v-flex>
+      </v-layout>
 
+      <v-layout row wrap justify-space-around>
+        <v-flex xs md3>
+          <v-btn outline block class="success">1</v-btn>
+        </v-flex>
+        <v-flex xs md3>
+          <v-btn outline block class="success">2</v-btn>
+        </v-flex>
+      </v-layout>
     </v-container>
 
   </div>
