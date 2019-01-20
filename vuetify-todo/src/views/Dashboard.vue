@@ -4,6 +4,17 @@
 
       <v-container class="my-5">
 
+        <v-layout row class="mb-3">
+          <v-btn small flat color="grey" @click="sortBy('title')">
+            <v-icon left small>folder</v-icon>
+            <span class="caption text-lowercase">By project name</span>
+          </v-btn>
+          <v-btn small flat color="grey" @click="sortBy('person')">
+            <v-icon left small>person</v-icon>
+            <span class="caption text-lowercase">By person</span>
+          </v-btn>
+        </v-layout>
+
         <v-card flat v-for="project in projects" :key="project.title">
           <v-layout row wrap :class="`pa-3 project ${project.status}`">
             <v-flex xs12 md6>
@@ -44,8 +55,12 @@ export default {
         { title: 'Create a community forum', person: 'Gouken', due: '20th Oct 2018', status: 'overdue', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. In expedita adipisci iste commodi nesciunt. Cupiditate nemo, minima earum at ab rerum, iure nostrum omnis consequuntur eos tempora, perspiciatis autem aut!' },
       ]
     }
+  },
+  methods: {
+    sortBy(prop) {
+      this.projects.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
+    } 
   }
-
 }
 </script>
 
