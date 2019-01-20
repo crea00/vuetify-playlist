@@ -3,38 +3,76 @@
     <h1 class="subheading grey--text">Team</h1>
 
     <v-container class="my-5">
-      <!-- v-layout is the row of the content -->
-      <v-layout row wrap>
-        <!-- v-flex is the column of v-layout -->
-        <v-flex xs12 md6>
-          <v-btn outline block class="primary">1</v-btn>
-        </v-flex>
-        <v-flex xs4 md2>
-          <v-btn outline block class="primary">2</v-btn>
-        </v-flex>
-        <v-flex xs4 md2>
-          <v-btn outline block class="primary">2</v-btn>
-        </v-flex>
-        <v-flex xs4 md2>
-          <v-btn outline block class="primary">2</v-btn>
-        </v-flex>
-      </v-layout>
 
-      <v-layout row wrap justify-space-around>
-        <v-flex xs md3>
-          <v-btn outline block class="success">1</v-btn>
-        </v-flex>
-        <v-flex xs md3>
-          <v-btn outline block class="success">2</v-btn>
-        </v-flex>
-      </v-layout>
+      <v-card flat class="pa-3">
+        <v-layout row wrap>
+          <v-flex xs12 md6>
+            <div class="caption grey--text">Project Title</div>
+            <div>Create a new website</div>
+          </v-flex>
+          <v-flex xs6 sm4 md2>
+            <div class="caption grey--text">Person</div>
+            <div>Jerome</div>
+          </v-flex>
+          <v-flex xs6 sm4 md2>
+            <div class="caption grey--text">Due by</div>
+            <div>1st Jan 2019</div>
+          </v-flex>
+          <v-flex xs6 sm4 md2>
+            <div class="caption grey--text">Status</div>
+            <div>ongoing</div>
+          </v-flex>
+        </v-layout>
+      </v-card>
+
+      <v-card flat class="pa-3">
+        <v-layout row wrap>
+          <v-flex xs12 md6>
+            <div class="caption grey--text">Project Title</div>
+            <div>Create a new website</div>
+          </v-flex>
+          <v-flex xs6 sm4 md2>
+            <div class="caption grey--text">Person</div>
+            <div>Jerome</div>
+          </v-flex>
+          <v-flex xs6 sm4 md2>
+            <div class="caption grey--text">Due by</div>
+            <div>1st Jan 2019</div>
+          </v-flex>
+          <v-flex xs6 sm4 md2>
+            <div class="caption grey--text">Status</div>
+            <div>ongoing</div>
+          </v-flex>
+        </v-layout>
+      </v-card>
+
+      <v-card flat class="pa-3">
+        <v-layout row wrap>
+          <v-flex xs12 md6>
+            <div class="caption grey--text">Project Title</div>
+            <div>Create a new website</div>
+          </v-flex>
+          <v-flex xs6 sm4 md2>
+            <div class="caption grey--text">Person</div>
+            <div>Jerome</div>
+          </v-flex>
+          <v-flex xs6 sm4 md2>
+            <div class="caption grey--text">Due by</div>
+            <div>1st Jan 2019</div>
+          </v-flex>
+          <v-flex xs6 sm4 md2>
+            <div class="caption grey--text">Status</div>
+            <div>ongoing</div>
+          </v-flex>
+        </v-layout>
+      </v-card>
+
     </v-container>
-
   </div>
 </template>
 
 <script>
 export default {
-
+  name: 'Team'
 }
 </script>
