@@ -35,9 +35,12 @@
           <v-avatar size="100">
             <img :src="avatar" alt="avatar">
           </v-avatar>
-          <p class="white--text subheading mt-1 text-xs-center" >
+          <p class="white--text subheading mt-1 text-xs-center">
             Jerome
           </p>
+        </v-flex>
+        <v-flex class="mt-4 mb-3">
+          <Popup />
         </v-flex>
       </v-layout>
       <v-list>
@@ -57,8 +60,13 @@
 
 
 <script>
+import Popup from './Popup'
+
 export default {
   name: 'Navbar',
+  components: {
+    Popup
+  },
   data() {
     return {
       drawer: false,
