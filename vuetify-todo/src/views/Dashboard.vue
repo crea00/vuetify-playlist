@@ -51,22 +51,33 @@
 </template>
 
 <script>
+import db from '@/fb'
+
 export default {
   name: 'Dashboard',
   data() {
     return {
-      projects: [
-        { title: 'Design a new website', person: 'Jerome', due: '1st Jan 2019', status: 'ongoing', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. In expedita adipisci iste commodi nesciunt. Cupiditate nemo, minima earum at ab rerum, iure nostrum omnis consequuntur eos tempora, perspiciatis autem aut!' },
-        { title: 'Code up the homepage', person: 'Chun Li', due: '10th Jan 2019', status: 'complete', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. In expedita adipisci iste commodi nesciunt. Cupiditate nemo, minima earum at ab rerum, iure nostrum omnis consequuntur eos tempora, perspiciatis autem aut!' },
-        { title: 'Design video thumbnails', person: 'Ryu', due: '20th Dec 2018', status: 'complete', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. In expedita adipisci iste commodi nesciunt. Cupiditate nemo, minima earum at ab rerum, iure nostrum omnis consequuntur eos tempora, perspiciatis autem aut!' },
-        { title: 'Create a community forum', person: 'Gouken', due: '20th Oct 2018', status: 'overdue', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. In expedita adipisci iste commodi nesciunt. Cupiditate nemo, minima earum at ab rerum, iure nostrum omnis consequuntur eos tempora, perspiciatis autem aut!' },
-      ]
+      projects: []
     }
   },
   methods: {
     sortBy(prop) {
       this.projects.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
     } 
+  },
+  created() {
+    db.collection('projects').onSnapshot(res => {
+      const changes = res.docChanges();
+
+      changes.forEach(change => {
+        if(change.type === 'added') {
+          this.projects.push({
+            ...change.doc.data(),
+            id: change.doc.id
+          })
+        }
+      })
+    })
   }
 }
 </script>
